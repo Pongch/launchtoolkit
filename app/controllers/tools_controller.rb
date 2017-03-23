@@ -15,16 +15,19 @@ class ToolsController < ApplicationController
   # GET /tools/new
   def new
     @tool = Tool.new
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   # GET /tools/1/edit
   def edit
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   # POST /tools
   # POST /tools.json
   def create
     @tool = Tool.new(tool_params)
+    @tool.category_id = params[:category_id]
 
     respond_to do |format|
       if @tool.save
@@ -40,6 +43,7 @@ class ToolsController < ApplicationController
   # PATCH/PUT /tools/1
   # PATCH/PUT /tools/1.json
   def update
+    @tool.category_id = params[:category_id]
     respond_to do |format|
       if @tool.update(tool_params)
         format.html { redirect_to @tool, notice: 'Tool was successfully updated.' }
@@ -69,6 +73,6 @@ class ToolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tool_params
-      params.require(:tool).permit(:title, :description, :link)
+      params.require(:tool).permit(:title, :description, :link, :category_id)
     end
 end

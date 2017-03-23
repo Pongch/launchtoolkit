@@ -15,6 +15,7 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Pick a Category")%>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
