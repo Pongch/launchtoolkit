@@ -8,7 +8,6 @@
       <th>Title</th>
       <th>Description</th>
       <th>Link</th>
-      <th>image</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
         <td><%= tool.title %></td>
         <td><%= tool.description %></td>
         <td><%= tool.link %></td>
-        <td><%= image_tag @tool.image.url(:thumb) %></td>
         <td><%= link_to 'Show', tool %></td>
         <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
         <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
