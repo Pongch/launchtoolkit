@@ -4,12 +4,26 @@ class ToolsController < ApplicationController
   # GET /tools
   # GET /tools.json
   def index
-    @tools = Tool.all
+    if params[:category].blank?
+      @tools = Tool.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @tools = Tool.where(:category_id => @category_id).order("created_at DESC")
+    end
   end
 
   # GET /tools/1
   # GET /tools/1.json
   def show
+  end
+  
+  def home
+    if params[:category].blank?
+      @tools = Tool.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @tools = Tool.where(:category_id => @category_id).order("created_at DESC")
+    end
   end
 
   # GET /tools/new

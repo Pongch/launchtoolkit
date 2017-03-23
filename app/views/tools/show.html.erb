@@ -10,10 +10,11 @@
   <%= @tool.description %>
 </p>
 
-<p>
-  <strong>Link:</strong>
-  <%= @tool.link %>
-</p>
+
+  <a href="<%= @tool.link %>" target="_blank">
+    <button class="btn-new">Use <%= @tool.title %></button>
+  </a>
+
 
 <%= link_to 'Edit', edit_tool_path(@tool) %> |
 <%= link_to 'Back', tools_path %>

@@ -1,0 +1,52 @@
+<!-- body -->
+<div class="container-fluid hero-image">
+    <h1 class="text-center hero-logo"><i class="fa fa-rocket fa-5x" aria-hidden="true"></i> </h1>
+    <div class="container hero-text">
+         <h1 class="text-center">LaunchTools <i class="fa fa-wrench" aria-hidden="true"></i></h1>
+        <h3 class="text-center">Free Tools for None-technical Startup Founders.</h3>
+        <p class="text-center">"I need a team of IOS Developers" "Photoshop is tough and expensive" "I need $1000 so I can make a website" These problems are not true for early stage startups. If you are a Startup Founder without technical skills, you could launch and test your MVP (minimum viable product) on a shoestring budget by yourself WITHOUT knowing how to code. Launchtools is a curated directory of Free, intuitive, web-based softwares that empower you to launch your business idea!</p>
+        <div class="row">
+        <div class="col-md-offset-5 col-md-1"><p class="margin-top text-center">Made with love from:</p></div>
+        <div class="col-md-1"><%= image_tag ("https://s3.amazonaws.com/launchtoolkit/local/launchpad.jpg"), class: "center-block", width: "100px"%></div>
+        
+    </div>
+    </div>
+    
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tools.each do |tool| %>
+      <tr>
+        <td><%= tool.title %></td>
+        <td><%= tool.description %></td>
+        <td><%= tool.link %></td>
+        <td><%= link_to 'Show', tool %></td>
+        <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
+        <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tool', new_tool_path %>
