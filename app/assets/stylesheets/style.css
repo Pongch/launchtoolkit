@@ -1,0 +1,71 @@
+.navbar-default {
+    background-color:white;
+    /*border-color:black;*/
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.09);
+}
+
+.black {
+    color: black !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.hero-image {
+  background: linear-gradient(to right, #FF512F , #DD2476);
+  color:white;
+}
+
+.hero-logo {
+    margin-top: 20rem;
+    margin-bottom: 5rem;
+}
+
+.hero-text {
+    margin-bottom: 5rem;
+}
+
+<!--button-->
+
+.btn-launch {
+  font-family: 'Lato', sans-serif;
+  color: #DD2476;
+  font-size: 17px;
+  background: white;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: solid #DD2476 2px;
+  border-radius: 30px;
+  margin-top: 1rem; }
+
+.btn-launch:hover {
+    background: #FF512F;
+  background-image: linear-gradient(to bottom, #FF512F, #DD2476);
+  color:white;
+}
+
+.btn-new {
+  font-family: 'Lato', sans-serif;
+  color: #DD2476;
+  font-size: 17px;
+  background: white;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: solid #DD2476 2px;
+  border-radius: 30px;
+  margin-top: 1rem; }
+
+.btn-new:hover {
+    background: #FF512F;
+  background-image: linear-gradient(to bottom, #FF512F, #DD2476);
+  color:white;
+}
+
+.margin-top {
+    margin-top: 3rem;
+}
+
+.site-footer {
+  margin-top: 5rem;
+  padding-top: 5rem; }

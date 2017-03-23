@@ -1,8 +1,9 @@
-class CreateApps < ActiveRecord::Migration
+class CreateTools < ActiveRecord::Migration
   def change
-    create_table :apps do |t|
+    create_table :tools do |t|
       t.string :title
       t.text :description
+      t.string :link
 
       t.timestamps null: false
     end
