@@ -1,7 +1,11 @@
-<h1>Editing Tool</h1>
+<div class="container-fluid hero-image">
+    <div class="container hero-text top-padding">
+         <h1 class="text-center">Medic ! <i class="fa fa-medkit" aria-hidden="true"></i></h1>
+         <h3 class="text-center">Fix this tool</h3>
+    </div>
+</div>
+<br>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @tool %> |
-<%= link_to 'Back', tools_path %>
-<%= link_to 'Destroy', @tool, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Delete', @tool, method: :delete, data: { confirm: 'I have a badddd feeling about this. Are you sure you wanna delete this? :(' } %>

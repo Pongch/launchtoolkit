@@ -1,35 +1,52 @@
-<%= form_for(@tool) do |f| %>
-  <% if @tool.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tool.errors.count, "error") %> prohibited this tool from being saved:</h2>
-
-      <ul>
-      <% @tool.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class= "container">
+  <div class="col-sm-4 col-md-offset-3 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1>Fill this form please <span class="fa fa-hand-o-down"></span></h1>
+      </div>
+      <div class="container">
+        <br>
+        <%= form_for(@tool) do |f| %>
+          <% if @tool.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@tool.errors.count, "error") %> prohibited this tool from being saved:</h2>
+              <ul>
+              <% @tool.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= f.label :title %>
+            <p>What's the name of this tool</p>
+            <%= f.text_field :title %>
+          </div>
+          <div class="field">
+            <%= f.label :image %>
+            <p>Add an image! (preferable square-ish)</p>
+            <%= f.file_field :image %>
+          </div>
+          <div class="field">
+            <%= f.label :category_id %>
+            <p>What category does this tool belong?</p>
+            <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Pick a Category")%>
+          </div>
+          <div class="field">
+            <%= f.label :description %>
+            <p>Give it a brief description</p>
+            <%= f.text_area :description %>
+          </div>
+          <div class="field">
+            <%= f.label :link %>
+            <p>(make sure your url has 'http://')</p>
+            <%= f.text_field :link %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>  
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Pick a Category")%>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <p>(make sure your url has 'http://')</p>
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
