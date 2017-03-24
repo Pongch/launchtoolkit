@@ -1,22 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container-fluid hero-image">
+    <div class="container hero-text top-padding">
+         <h1 class="text-center"><%= @tool.title %> <i class="fa fa-wrench" aria-hidden="true"></i></h1>
+    </div>
+</div>
 
-<%= image_tag @tool.image.url(:medium) %>
-<p>
-  <strong>Title:</strong>
-  <%= @tool.title %>
-</p>
-<p><%= @tool.category.name %></p>
-<p>
-  <strong>Description:</strong>
-  <%= @tool.description %>
-</p>
+<div class="container">
+    <%= image_tag @tool.image.url(:medium), class:"center-block margin-top" %>
+    <p class="text-center margin-top">What it is  for: <span class="label label-danger text-center"><%= @tool.category.name %></span></p>
+    <h4 class="text-center margin-top">What it does:</h4>
+    <p class="text-center"><%= @tool.description %></p>
+    <a target="_blank" href="<%= @tool.link %>">
+        <button class="btn-new center-block margin-top">Give <%= @tool.title %> a try!</button>
+    </a>
+</div>
 
-
-  <a href="<%= @tool.link %>" target="_blank">
-    <button class="btn-new">Use <%= @tool.title %></button>
-  </a>
-
-
-<%= link_to 'Edit', edit_tool_path(@tool) %> |
-<%= link_to 'Back', tools_path %>

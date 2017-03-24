@@ -1,32 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container-fluid hero-image">
+    <div class="container hero-text top-padding">
+         <h1 class="text-center"> <%= params[:category] %> Tools <i class="fa fa-wrench" aria-hidden="true"></i></h1>
+         <h3 class="text-center">Free Tools for None-technical Startup Founders.</h3>
+    </div>
+    
+</div>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Link</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tools.each do |tool| %>
-      <tr>
-        <td><%= tool.title %></td>
-        <td><%= tool.description %></td>
-        <td><%= tool.link %></td>
-        <td><%= link_to 'Show', tool %></td>
-        <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
-        <td><%= link_to 'Destroy', tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tool', new_tool_path %>
+<% @tools.each do |tool| %>
+  <div class= row>
+      <a href= "/tools/ <%= tool.id %>">
+          <%= image_tag tool.image.url(:medium) %>
+      </a>   
+      <%= tool.title %>
+      <%= tool.description %>
+      <%= tool.link %>
+      
+  </div>
+<% end %>
+  
 
