@@ -8,16 +8,25 @@
     
 </div>
 
-<% @tools.each do |tool| %>
-  <div class= row>
-      <a href= "/tools/ <%= tool.id %>">
-          <%= image_tag tool.image.url(:medium) %>
-      </a>   
-      <%= tool.title %>
-      <%= tool.description %>
-      <%= tool.link %>
-      
-  </div>
-<% end %>
+<div class="container">
+    <div class="row">
+        <% @tools.each do |tool| %>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href= "/tools/ <%= tool.id %>">
+                            <%= image_tag tool.image.url(:medium), class:"center-block img-thumbnail"%>
+                        </a> 
+                    </div>
+                    <div class="panel-body">
+                        <h3 class="text-center">
+                            <%= tool.title %>
+                        </h3>
+                    </div>
+                </div>
+        </div>
+        <% end %>
+    </div>
+</div>
   
 

@@ -75,3 +75,17 @@
 .top-padding {
     margin-top: 13rem;
 }
+
+#tool {
+    margin: 0 auto;
+}
+
+.box {
+    margin: 5px;
+    width: 214px;
+    background-color: white;
+}
+
+.box img {
+    width:100%;
+}
