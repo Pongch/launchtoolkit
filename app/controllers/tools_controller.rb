@@ -16,7 +16,7 @@ class ToolsController < ApplicationController
   # GET /tools/1.json
   def show
   end
-  
+
   def home
     if params[:category].blank?
       @tools = Tool.all.order("created_at DESC")
