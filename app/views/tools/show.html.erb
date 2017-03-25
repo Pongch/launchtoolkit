@@ -7,6 +7,10 @@
 </div>
 
 <div class="container">
+    <br>
+    <div class="col-sm-offset-4 col-sm-4">
+    <div class="panel panel-default">
+        
     <%= image_tag @tool.image.url(:thumb), class:"center-block margin-top" %>
     <p class="text-center margin-top">What it is  for: <span class="label label-danger text-center"><%= @tool.category.name %></span></p>
     <h4 class="text-center margin-top">What it does:</h4>
@@ -14,5 +18,8 @@
     <a target="_blank" href="<%= @tool.link %>">
         <button class="btn-new center-block margin-top">Give <%= @tool.title %> a try!</button>
     </a>
+    <br>
+    </div>
+    </div>
 </div>
 
