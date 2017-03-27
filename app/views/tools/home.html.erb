@@ -23,16 +23,14 @@
             <div class="panel panel-default">
                     <div class="panel-heading">
                         <a href= "/tools/ <%= tool.id %>">
-                            <%= image_tag tool.image.url(:thumb), class:"center-block img-thumbnail"%>
+                            <%= image_tag tool.image.url(:thumb), class:"center-block img-thumb"%>
                         </a> 
                     </div>
                     <div class="panel-body">
                         <h3 class="text-center">
                             <%= tool.title %>
                         </h3>
-                        <p class="text-center">
-                            <%= tool.tagline %>
-                        </p>
+                        
                     </div>
                 </div>
         </div>
